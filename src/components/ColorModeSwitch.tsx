@@ -4,12 +4,11 @@ import { useColorMode } from "./ui/color-mode";
 
 const ColorModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const checked = colorMode == "dark" ? true : false;
   return (
     <HStack>
       <Switch
         colorPalette={"green"}
-        checked={checked}
+        checked={colorMode == "dark"}
         onCheckedChange={toggleColorMode}
       />
       <Text>Dark Mode</Text>

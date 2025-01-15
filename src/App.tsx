@@ -13,6 +13,7 @@ function App() {
       <GridItem area={"nav"}>
         <NavBar />
       </GridItem>
+
       <GridItem area={"aside"} hideBelow={"lg"}>
         Aside
       </GridItem>
