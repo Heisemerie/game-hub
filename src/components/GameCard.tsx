@@ -12,7 +12,7 @@ const GameCard = ({
   game: { name, background_image, parent_platforms, metacritic },
 }: Props) => {
   return (
-    <Card.Root borderRadius={10} width={280} overflow={"hidden"}>
+    <Card.Root>
       <Image src={ getCroppedImageUrl(background_image, 600, 400)} />
       <Card.Body>
         <Heading fontSize={"2xl"}>{name}</Heading>
