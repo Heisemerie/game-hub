@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import apiClient from "@/services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 import { useEffect, useState } from "react";
