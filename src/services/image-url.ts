@@ -1,3 +1,5 @@
+//rawg api supports cropping for specific dimensions eg 600x400
+
 const getCroppedImageUrl = (url: string, width: number, height: number) => {
     const target = `media/`;
     const index = url.indexOf(target) + target.length;
