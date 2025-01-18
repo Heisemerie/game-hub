@@ -15,14 +15,14 @@ function App() {
       }}
       templateColumns={{
         base: "1fr",
-        lg: "200px 1fr",
+        lg: "235px 1fr",
       }}
     >
       <GridItem area={"nav"}>
         <NavBar />
       </GridItem>
 
-      <GridItem area={"aside"} hideBelow={"lg"} paddingX={1} overflow={"clip"}>
+      <GridItem area={"aside"} hideBelow={"lg"} paddingX={1}>
         <GenreList onSelectGenre={(genre)=>setSelectedGenre(genre)}/>
       </GridItem>
 

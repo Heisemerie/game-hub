@@ -17,7 +17,7 @@ const GenreList = ({onSelectGenre}: Props) => {
     <List.Root variant={"plain"}>
       {data.map((genre) => (
         <List.Item key={genre.id} paddingY={1}>
-          <HStack>
+          <HStack w={'full'} borderRightRadius={3} overflow={'hidden'}>
             <List.Indicator asChild>
               <Image
                 src={getCroppedImageUrl(genre.image_background, 600, 400)}
@@ -26,10 +26,9 @@ const GenreList = ({onSelectGenre}: Props) => {
               />
             </List.Indicator>
             <Button
-              fontSize={"lg"}
+              fontSize={"md"}
               variant={"ghost"}
-              w={"150px"}
-              overflow={"clip"}
+              w={'full'}
               justifyContent={"start"}
               onClick={() => onSelectGenre(genre)}
             >
