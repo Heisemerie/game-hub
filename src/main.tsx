@@ -3,14 +3,14 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "@/components/ui/provider";
 import "./index.css";
 import App from "./App.tsx";
-import ColorMode from "./components/ColorMode.tsx";
+import ColorModeProvider from "./components/ColorModeProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider>
-      <ColorMode>
+      <ColorModeProvider>
         <App />
-      </ColorMode>
+      </ColorModeProvider>
     </Provider>
   </StrictMode>
 );
