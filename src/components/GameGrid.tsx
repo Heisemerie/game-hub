@@ -3,10 +3,10 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genres } from "@/hooks/useGenres";
+import { Genre } from "@/hooks/useGenres";
 
 interface Props {
-  selectedGenre: Genres | null;
+  selectedGenre: Genre | null;
 }
 
 const GameGrid = ({ selectedGenre }: Props) => {
