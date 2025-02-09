@@ -1,5 +1,5 @@
 import useGenres, { Genre } from "@/hooks/useGenres";
-import getCroppedImageUrl from "@/services/image-url";
+import getCroppedImageUrl from "@/services/imageUrl";
 import {
   Button,
   Heading,
@@ -23,7 +23,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 
   return (
     <>
-      <Heading paddingX={3} paddingBottom={3}>Genres</Heading>
+      <Heading paddingX={3} paddingBottom={3}>
+        Genres
+      </Heading>
       <List.Root variant={"plain"}>
         {data.map((genre) => (
           <List.Item key={genre.id} paddingY={1}>
