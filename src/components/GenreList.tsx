@@ -29,7 +29,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         position={"sticky"}
         top={0}
       >
-        {data?.map((genre) => (
+        {data?.results.map((genre) => (
           <List.Item
             key={genre.id}
             alignItems={"center"}

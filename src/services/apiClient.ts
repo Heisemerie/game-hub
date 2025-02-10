@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 export interface FetchResponse<D> {
+  count: number;
+  next: string | null;
   results: D[];
 }
 
@@ -21,6 +23,6 @@ export class APIclient<T> {
   getAll = (config?: AxiosRequestConfig) => {
     return axiosInstance
       .get<FetchResponse<T>>(this.endpoint, config)
-      .then((res) => res.data.results);
+      .then((res) => res.data);
   };
 }
