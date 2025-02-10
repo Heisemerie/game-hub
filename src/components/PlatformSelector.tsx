@@ -1,8 +1,7 @@
+import usePlatforms, { Platform } from "@/hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
 import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
-import usePlatforms from "@/hooks/usePlatforms";
-import { Platform } from "@/hooks/useGames";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
