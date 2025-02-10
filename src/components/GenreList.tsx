@@ -23,7 +23,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         variant={"plain"}
         overflowY={"scroll"}
         h={"100vh"}
-        scrollbarWidth={'none'}
+        scrollbarWidth={"none"}
         position={"sticky"}
         top={0}
       >
@@ -32,7 +32,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
             key={genre.id}
             alignItems={"center"}
             margin={"auto"}
-            paddingY={1}
+            marginY={1}
             w={"4/5"}
           >
             <Button
