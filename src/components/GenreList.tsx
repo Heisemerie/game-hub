@@ -9,6 +9,7 @@ interface Props {
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
+  console.log(data);
 
   if (error) return null;
 
@@ -27,7 +28,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         position={"sticky"}
         top={0}
       >
-        {data.map((genre) => (
+        {data?.map((genre) => (
           <List.Item
             key={genre.id}
             alignItems={"center"}

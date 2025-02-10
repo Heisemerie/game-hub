@@ -22,7 +22,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         textAlign={"center"}
         alignContent={"center"}
       >
-        {error}
+        {error.message}
       </Heading>
     );
 
