@@ -1,13 +1,6 @@
 import useGenres, { Genre } from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/imageUrl";
-import {
-  Button,
-  Heading,
-  HStack,
-  Image,
-  List,
-  Spinner,
-} from "@chakra-ui/react";
+import { Button, Heading, Image, List, Spinner } from "@chakra-ui/react";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
@@ -23,37 +16,41 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 
   return (
     <>
-      <Heading paddingX={3} paddingBottom={3}>
+      <Heading paddingX={7} paddingBottom={3}>
         Genres
       </Heading>
-      <List.Root variant={"plain"}>
+      <List.Root
+        variant={"plain"}
+        overflowY={"scroll"}
+        h={"100vh"}
+        scrollbarWidth={'none'}
+        position={"sticky"}
+        top={0}
+      >
         {data.map((genre) => (
-          <List.Item key={genre.id} paddingY={1}>
-            <HStack
-              w={"full"}
-              borderRightRadius={3}
-              overflow={"hidden"}
-              marginX={3}
+          <List.Item
+            key={genre.id}
+            alignItems={"center"}
+            margin={"auto"}
+            paddingY={1}
+            w={"4/5"}
+          >
+            <Button
+              fontSize={"md"}
+              variant={selectedGenre?.id === genre.id ? "subtle" : "ghost"}
+              textAlign={"left"}
+              justifyContent={"flex-start"}
+              whiteSpace={"normal"}
+              flex={1}
+              onClick={() => onSelectGenre(genre)}
             >
-              <List.Indicator asChild>
-                <Image
-                  src={getCroppedImageUrl(genre.image_background, 600, 400)}
-                  boxSize={"32px"}
-                  borderRadius={8}
-                />
-              </List.Indicator>
-              <Button
-                fontSize={"lg"}
-                variant={selectedGenre?.id === genre.id ? "subtle" : "ghost"}
-                flex={1}
-                textAlign={"left"}
-                justifyContent={"flex-start"}
-                onClick={() => onSelectGenre(genre)}
-                whiteSpace={"normal"}
-              >
-                {genre.name}
-              </Button>
-            </HStack>
+              <Image
+                src={getCroppedImageUrl(genre.image_background, 600, 400)}
+                boxSize={"32px"}
+                borderRadius={8}
+              />
+              {genre.name}
+            </Button>
           </List.Item>
         ))}
       </List.Root>
