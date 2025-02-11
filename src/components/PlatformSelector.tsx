@@ -2,15 +2,15 @@ import usePlatforms from "@/hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
 import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
-import { Platform } from "@/services/platformService";
 
 interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  onSelectPlatform: (platformId: number) => void;
+  selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, error } = usePlatforms();
+  const selectedPlatform = data?.results.find(p=>p.id===selectedPlatformId);
 
   if (error) return null;
 
@@ -18,7 +18,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="subtle" size="md" fontSize={"md"}>
-          {selectedPlatform ? selectedPlatform.name : "Platform"}
+          {selectedPlatformId ? selectedPlatform?.name : "Platform"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
@@ -27,7 +27,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
           <MenuItem
             key={platform.id}
             value={platform.slug}
-            onClick={() => onSelectPlatform(platform)}
+            onClick={() => onSelectPlatform(platform.id)}
           >
             {platform.name}
           </MenuItem>
