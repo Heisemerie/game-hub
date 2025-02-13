@@ -1,43 +1,51 @@
-import { Platform } from "../services/platformService";
 import { HStack, Icon } from "@chakra-ui/react";
+import { BsGlobe } from "react-icons/bs";
 import {
-  FaWindows,
-  FaPlaystation,
-  FaXbox,
-  FaApple,
-  FaLinux,
   FaAndroid,
+  FaApple,
+  FaGamepad,
+  FaLinux,
+  FaPlaystation,
+  FaWindows,
+  FaXbox,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
-import { BsGlobe } from "react-icons/bs";
-import { IconType } from "react-icons";
-import React from "react";
+import { Platform } from "../services/platformService";
 
 interface Props {
   platforms: Platform[];
 }
 
 const PlatformIconList = ({ platforms }: Props) => {
-  const IconMap: { [key: string]: IconType } = {
-    pc: FaWindows,
-    playstation: FaPlaystation,
-    xbox: FaXbox,
-    ios: MdPhoneIphone,
-    linux: FaLinux,
-    android: FaAndroid,
-    mac: FaApple,
-    nintendo: SiNintendo,
-    web: BsGlobe,
+  const renderIcon = (slug: string) => {
+    switch (slug) {
+      case "pc":
+        return <FaWindows />;
+      case "playstation":
+        return <FaPlaystation />;
+      case "xbox":
+        return <FaXbox />;
+      case "ios":
+        return <MdPhoneIphone />;
+      case "linux":
+        return <FaLinux />;
+      case "android":
+        return <FaAndroid />;
+      case "mac":
+        return <FaApple />;
+      case "nintendo":
+        return <SiNintendo />;
+      case "web":
+        return <BsGlobe />;
+      default:
+        return <FaGamepad />;
+    }
   };
-  // or IconMap: { [key in Platform['slug']]: IconType } = {}
-
   return (
     <HStack marginY={1}>
-      {platforms.map((platform) => (
-        <Icon key={platform.id} color={"gray.500"}>
-          {React.createElement(IconMap[platform.slug])}
-        </Icon>
+      {platforms?.map((platform) => (
+        <Icon key={platform.id}>{renderIcon(platform.slug)}</Icon>
       ))}
     </HStack>
   );
