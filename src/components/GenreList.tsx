@@ -44,11 +44,13 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
               flex={1}
               onClick={() => onSelectGenre(genre.id)}
             >
-              <Image
-                src={getCroppedImageUrl(genre.image_background, 600, 400)}
-                boxSize={"32px"}
-                borderRadius={8}
-              />
+              <List.Indicator asChild>
+                <Image
+                  src={getCroppedImageUrl(genre.image_background, 600, 400)}
+                  boxSize={"32px"}
+                  borderRadius={8}
+                />
+              </List.Indicator>
               {genre.name}
             </Button>
           </List.Item>
