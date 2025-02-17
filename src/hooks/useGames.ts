@@ -1,19 +1,21 @@
-import { GameQuery } from "@/App";
 import { FetchResponse } from "@/services/apiClient";
 import gameService, { Game } from "@/services/gameService";
+import useGameQueryStore from "@/store";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
 
-const useGames = (gamequery: GameQuery) =>
-  useInfiniteQuery<FetchResponse<Game>, Error>({
-    queryKey: ["games", gamequery],
+const useGames = () => {
+  const gameQuery = useGameQueryStore((store) => store.gameQuery);
+
+  return useInfiniteQuery<FetchResponse<Game>, Error>({
+    queryKey: ["games", gameQuery],
     queryFn: ({ pageParam = 1 }) =>
       gameService.getAll({
         params: {
-          genres: gamequery.genreId,
-          parent_platforms: gamequery.platformId,
-          ordering: gamequery.sortOrder,
-          search: gamequery.searchText,
+          genres: gameQuery.genreId,
+          parent_platforms: gameQuery.platformId,
+          ordering: gameQuery.sortOrder,
+          search: gameQuery.searchText,
           page: pageParam,
           page_size: 12,
         },
@@ -23,5 +25,6 @@ const useGames = (gamequery: GameQuery) =>
       return lastPage.next ? allPages.length + 1 : undefined;
     },
   });
+};
 
 export default useGames;

@@ -1,13 +1,9 @@
 import { BsChevronDown } from "react-icons/bs";
 import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
+import useGameQueryStore from "@/store";
 
-interface Prop {
-  onSelelectSortOrder: (sortOrder: string) => void;
-  sortOrderValue: string;
-}
-
-const SortSelector = ({ onSelelectSortOrder, sortOrderValue }: Prop) => {
+const SortSelector = () => {
   const sortOrders: { value: string; label: string }[] = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },
@@ -17,19 +13,27 @@ const SortSelector = ({ onSelelectSortOrder, sortOrderValue }: Prop) => {
     { value: "-rating", label: "Average rating" },
   ];
 
-  const currentSortOrder = sortOrders.find((order) => order.value === sortOrderValue);
+  const sortOrder = useGameQueryStore((store) => store.gameQuery.sortOrder);
+  const setSortOrder = useGameQueryStore((store) => store.setSortOrder);
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
 
   return (
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="subtle" size="md" fontSize={"md"}>
-            Order by: {currentSortOrder?.label || "Relevance"}
+          Order by: {currentSortOrder?.label || "Relevance"}
           <BsChevronDown />
         </Button>
       </MenuTrigger>
       <MenuContent>
         {sortOrders.map((order) => (
-          <MenuItem value={order.value} key={order.value} onClick={() => onSelelectSortOrder(order.value)}>
+          <MenuItem
+            value={order.value}
+            key={order.value}
+            onClick={() => setSortOrder(order.value)}
+          >
             {order.label}
           </MenuItem>
         ))}
