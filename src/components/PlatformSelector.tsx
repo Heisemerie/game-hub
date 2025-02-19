@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import usePlatform from "@/hooks/usePlatform";
 import useGameQueryStore from "@/store";
+import renderIcon from "@/services/renderIcon";
 
 const PlatformSelector = () => {
   const platformId = useGameQueryStore((store) => store.gameQuery.platformId);
@@ -28,6 +29,7 @@ const PlatformSelector = () => {
             value={platform.slug}
             onClick={() => setPlatformId(platform.id)}
           >
+            {renderIcon(platform.slug)}
             {platform.name}
           </MenuItem>
         ))}
