@@ -10,7 +10,9 @@ const NavBar = () => {
   return (
     <HStack padding={"10px"} marginY={5}>
       <Image src={logo} maxW={{ base: 100, md: 200 }} marginX={1} />
+      <Box flex={1}>
       <SearchInput />
+      </Box>
       <ColorModeButton />
     </HStack>
   );
