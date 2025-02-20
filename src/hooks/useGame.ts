@@ -1,5 +1,8 @@
-import gameService from "@/services/gameService";
+import { Game } from "@/entities/Game";
+import { APIclient } from "@/services/apiClient";
 import { useQuery } from "@tanstack/react-query";
+
+const gameService = new APIclient<Game>("/games");
 
 const useGame = (slug: string) =>
   useQuery({
@@ -7,4 +10,4 @@ const useGame = (slug: string) =>
     queryFn: () => gameService.get(slug),
   });
 
-  export default useGame
+export default useGame;
