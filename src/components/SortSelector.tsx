@@ -1,7 +1,7 @@
 import { BsChevronDown } from "react-icons/bs";
 import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
-import useGameQueryStore from "@/store";
+import useGameQueryStore from "@/gameQueryStore";
 
 const SortSelector = () => {
   const sortOrders: { value: string; label: string }[] = [
