@@ -12,13 +12,13 @@ const GameTrailer = ({ gameId }: Props) => {
 
   if (error) throw error;
 
-  return (
+  return dataResults ? (
     <video
       src={dataResults?.data[480]}
       poster={dataResults?.preview}
       controls
     />
-  );
+  ) : null;
 };
 
 export default GameTrailer;
