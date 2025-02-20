@@ -12,7 +12,7 @@ const GameCard = ({
   game: { name, background_image, parent_platforms, metacritic },
 }: Props) => {
   return (
-    <Card.Root>
+    <Card.Root h={'full'}>
       <Image src={getCroppedImageUrl(background_image, 600, 400)} />
       <Card.Body>
         <HStack justify={"space-between"} marginBottom={3}>
