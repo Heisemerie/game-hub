@@ -1,4 +1,4 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { Box, HStack, Image } from "@chakra-ui/react";
 import gamehub from "../assets/gamehub.png";
 import gamehubdark from "../assets/gamehubdark.png";
 import { ColorModeButton, useColorModeValue } from "./ui/color-mode";
@@ -11,7 +11,7 @@ const NavBar = () => {
     <HStack padding={"10px"} marginY={5}>
       <Image src={logo} maxW={{ base: 100, md: 200 }} marginX={1} />
       <Box flex={1}>
-      <SearchInput />
+        <SearchInput />
       </Box>
       <ColorModeButton />
     </HStack>
