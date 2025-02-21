@@ -22,7 +22,11 @@ const SortSelector = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="subtle" size="md" fontSize={"md"}>
+        <Button
+          variant="subtle"
+          size={{ base: "sm", md: "md" }}
+          fontSize={"md"}
+        >
           Order by: {currentSortOrder?.label || "Relevance"}
           <BsChevronDown />
         </Button>

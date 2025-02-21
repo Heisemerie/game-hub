@@ -1,6 +1,7 @@
 import GameGrid from '@/components/GameGrid'
 import GameHeading from '@/components/GameHeading'
 import GenreList from '@/components/GenreList'
+import GenreListDrawer from '@/components/GenreListDrawer'
 import PlatformSelector from '@/components/PlatformSelector'
 import SortSelector from '@/components/SortSelector'
 import { Box, Grid, GridItem, HStack } from '@chakra-ui/react'
@@ -25,6 +26,7 @@ const HomePage = () => {
         <Box paddingLeft={{ base: 3, md: 6 }}>
           <GameHeading />
           <HStack>
+            <GenreListDrawer/>
             <PlatformSelector />
             <SortSelector />
           </HStack>

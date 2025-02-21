@@ -14,7 +14,7 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading paddingX={7} paddingBottom={3}>
+      <Heading paddingX={7} paddingBottom={3} hideFrom={'md'}>
         Genres
       </Heading>
       <List.Root
