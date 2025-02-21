@@ -1,12 +1,11 @@
 import {
-  DrawerBackdrop,
   DrawerBody,
   DrawerCloseTrigger,
   DrawerContent,
   DrawerHeader,
   DrawerRoot,
   DrawerTitle,
-  DrawerTrigger,
+  DrawerTrigger
 } from "@/components/ui/drawer";
 import { Button } from "@chakra-ui/react";
 import GenreList from "./GenreList";
@@ -14,18 +13,17 @@ import GenreList from "./GenreList";
 const GenreListDrawer = () => {
   return (
     <DrawerRoot placement={"start"}>
-      <DrawerBackdrop />
       <DrawerTrigger asChild>
         <Button variant="subtle" size="sm" fontSize={"md"} hideFrom={"md"}>
           Genres
         </Button>
       </DrawerTrigger>
-      <DrawerContent offset={"1"} rounded="md" h={"100vh"}>
+      <DrawerContent offset={"1"} rounded="md" h={"full"} bg={"blue"}>
         <DrawerHeader>
           <DrawerTitle>Genres</DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
-          <GenreList />
+          <GenreList alignItems="left" margin="none" whitespace="none"/>
         </DrawerBody>
         <DrawerCloseTrigger />
       </DrawerContent>
