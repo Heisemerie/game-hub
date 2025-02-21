@@ -19,7 +19,7 @@ const PlatformSelector = () => {
       <MenuTrigger asChild>
         <Button
           variant="subtle"
-          size={{ base: "sm", md: "md" }}
+          size={{ base: "xs", md: "md" }}
           fontSize={"md"}
         >
           {platformId ? selectedPlatform?.name : "Platform"}
