@@ -20,7 +20,6 @@ const ExpandableText = ({ children, maxChars = 100 }: Props) => {
         size={"xs"}
         marginLeft={1}
         fontWeight={"bold"}
-        colorPalette={"orange"}
         onClick={() => setSummarize(!summarize)}
       >
         {summarize ? "More" : "Less"}

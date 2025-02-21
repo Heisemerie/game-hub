@@ -3,7 +3,13 @@ import GameAttributes from "@/components/GameAttributes";
 import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import useGame from "@/hooks/useGame";
-import { Box, Center, Heading, Spinner } from "@chakra-ui/react";
+import {
+  Center,
+  GridItem,
+  Heading,
+  SimpleGrid,
+  Spinner,
+} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 const GameDetailPage = () => {
@@ -20,13 +26,19 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <Box p={5}>
-      <Heading>{game.name}</Heading>
-      <ExpandableText maxChars={500}>{game.description_raw}</ExpandableText>
-      <GameAttributes game={game} />
-      <GameTrailer gameId={game.id} />
-      <GameScreenshots gameId={game.id} />
-    </Box>
+    <SimpleGrid columns={{ base: 1, md: 2 }} gap={4} paddingX={10}>
+      <GridItem>
+        <Heading fontSize={30} marginBottom={3}>
+          {game.name}
+        </Heading>
+        <ExpandableText maxChars={500}>{game.description_raw}</ExpandableText>
+        <GameAttributes game={game} />
+      </GridItem>
+      <GridItem>
+        <GameTrailer gameId={game.id} />
+        <GameScreenshots gameId={game.id} />
+      </GridItem>
+    </SimpleGrid>
   );
 };
 
