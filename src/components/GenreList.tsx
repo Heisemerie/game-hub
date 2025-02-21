@@ -3,13 +3,7 @@ import useGenres from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/imageUrl";
 import { Button, Image, List, Spinner } from "@chakra-ui/react";
 
-interface Props {
-  alignItems?: string;
-  margin?: string;
-  whitespace?: string;
-}
-
-const GenreList = ({alignItems='center', margin='auto', whitespace='normal'}: Props) => {
+const GenreList = () => {
   const genreId = useGameQueryStore((store) => store.gameQuery.genreId);
   const setGenreId = useGameQueryStore((store) => store.setGenreId);
   const { data, isLoading, error } = useGenres();
@@ -30,8 +24,8 @@ const GenreList = ({alignItems='center', margin='auto', whitespace='normal'}: Pr
       {data?.results.map((genre) => (
         <List.Item
           key={genre.id}
-          alignItems={alignItems}
-          margin={margin}
+          alignItems={"center"}
+          margin={"auto"}
           marginY={1}
           w={"4/5"}
         >
@@ -40,7 +34,7 @@ const GenreList = ({alignItems='center', margin='auto', whitespace='normal'}: Pr
             variant={genreId === genre.id ? "subtle" : "ghost"}
             textAlign={"left"}
             justifyContent={"flex-start"}
-            whiteSpace={whitespace}
+            whiteSpace={"normal"}
             flex={1}
             onClick={() => setGenreId(genre.id)}
           >
