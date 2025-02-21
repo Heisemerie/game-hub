@@ -1,6 +1,6 @@
 import renderIcon from "@/services/renderIcon";
 import { HStack, Icon } from "@chakra-ui/react";
-import { Platform } from "@/entities/Platform";
+import Platform from "@/entities/Platform";
 
 interface Props {
   platforms: Platform[];
