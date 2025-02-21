@@ -20,7 +20,7 @@ const GenreListDrawer = () => {
           Genres
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent offset={"1"} rounded="md" h={"100vh"}>
         <DrawerHeader>
           <DrawerTitle>Genres</DrawerTitle>
         </DrawerHeader>
