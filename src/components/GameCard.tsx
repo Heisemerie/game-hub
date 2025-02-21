@@ -20,7 +20,7 @@ const GameCard = ({
           <PlatformIconList
             platforms={parent_platforms.map(({ platform }) => platform)}
           />
-          {metacritic && <CriticScore score={metacritic} />}
+          <CriticScore score={metacritic} />
         </HStack>
         <Heading fontSize={"2xl"}>
           <Link to={`/games/${slug}`}>{name}</Link>
