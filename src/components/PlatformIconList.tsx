@@ -9,7 +9,7 @@ interface Props {
 const PlatformIconList = ({ platforms }: Props) => {
   return (
     <HStack marginY={1}>
-      {platforms.map((platform) => (
+      {platforms?.map((platform) => (
         <Icon key={platform.id} color={"gray.500"}>
           {renderIcon(platform.slug)}
         </Icon>
