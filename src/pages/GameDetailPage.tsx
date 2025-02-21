@@ -24,7 +24,7 @@ const GameDetailPage = () => {
       >
         <GridItem gap={3}>
           <Skeleton height="4em" marginBottom={3} />
-          <SkeletonText noOfLines={3} marginY={1} height={"2em"} />
+          <Skeleton height={"10em"} />
           <SimpleGrid columns={2} gap={10} marginY={5}>
             {gameAttributesSkeleton.map((skeleton) => (
               <SkeletonText noOfLines={3} key={skeleton} />
