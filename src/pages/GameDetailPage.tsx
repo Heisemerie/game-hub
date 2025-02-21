@@ -26,7 +26,11 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} gap={4} paddingX={10}>
+    <SimpleGrid
+      columns={{ base: 1, md: 2 }}
+      gap={4}
+      paddingX={{ base: 5, md: 10 }}
+    >
       <GridItem>
         <Heading fontSize={30} marginBottom={3}>
           {game.name}
