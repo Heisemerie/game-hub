@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import usePlatform from "@/hooks/usePlatform";
 import useGameQueryStore from "@/gameQueryStore";
-import renderIcon from "@/services/renderIcon";
+import renderIcon from "@/components/PlatformIcon";
 
 const PlatformSelector = () => {
   const platformId = useGameQueryStore((store) => store.gameQuery.platformId);

@@ -2,7 +2,7 @@ import { Icon, SimpleGrid, Text } from "@chakra-ui/react";
 import CriticScore from "./CriticScore";
 import DefinitionItem from "./DefinitionItem";
 import Game from "@/entities/Game";
-import renderIcon from "@/services/renderIcon";
+import PlatformIcon from "@/components/PlatformIcon";
 
 interface Props {
   game: Game;
@@ -14,7 +14,7 @@ const GameAttributes = ({ game }: Props) => {
       <DefinitionItem term="Platforms">
         {game.parent_platforms?.map(({ platform }) => (
           <Text key={platform.id} marginBottom={1}>
-            <Icon marginRight={1}>{renderIcon(platform.slug)}</Icon>
+            <Icon marginRight={1}>{PlatformIcon(platform.slug)}</Icon>
             {platform.name}
           </Text>
         ))}

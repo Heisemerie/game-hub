@@ -1,4 +1,4 @@
-import renderIcon from "@/services/renderIcon";
+import PlatformIcon from "@/components/PlatformIcon";
 import { HStack, Icon } from "@chakra-ui/react";
 import Platform from "@/entities/Platform";
 
@@ -11,7 +11,7 @@ const PlatformIconList = ({ platforms }: Props) => {
     <HStack marginY={1}>
       {platforms?.map((platform) => (
         <Icon key={platform.id} color={"gray.500"}>
-          {renderIcon(platform.slug)}
+          {PlatformIcon(platform.slug)}
         </Icon>
       ))}
     </HStack>
