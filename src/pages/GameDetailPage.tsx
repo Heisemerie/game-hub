@@ -1,5 +1,6 @@
 import ExpandableText from "@/components/ExpandableText";
 import GameAttributes from "@/components/GameAttributes";
+import GameDetailPageContainer from "@/components/GameDetailPageContainer";
 import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import { Skeleton, SkeletonText } from "@/components/ui/skeleton";
@@ -17,14 +18,10 @@ const GameDetailPage = () => {
 
   if (isLoading) {
     return (
-      <SimpleGrid
-        columns={{ base: 1, md: 2 }}
-        gap={4}
-        paddingX={{ base: 5, md: 20 }}
-      >
+      <GameDetailPageContainer>
         <GridItem gap={3}>
-          <Skeleton height="4em" marginBottom={3} />
-          <Skeleton height={"10em"} />
+          <Skeleton height={10} marginBottom={3} />
+          <Skeleton height={40} />
           <SimpleGrid columns={2} gap={10} marginY={5}>
             {gameAttributesSkeleton.map((skeleton) => (
               <SkeletonText noOfLines={3} key={skeleton} />
@@ -38,18 +35,14 @@ const GameDetailPage = () => {
             ))}
           </SimpleGrid>
         </GridItem>
-      </SimpleGrid>
+      </GameDetailPageContainer>
     );
   }
 
   if (error || !game) throw error;
 
   return (
-    <SimpleGrid
-      columns={{ base: 1, md: 2 }}
-      gap={4}
-      paddingX={{ base: 5, md: 20 }}
-    >
+    <GameDetailPageContainer>
       {!isLoading && (
         <>
           <GridItem>
@@ -67,7 +60,7 @@ const GameDetailPage = () => {
           </GridItem>
         </>
       )}
-    </SimpleGrid>
+    </GameDetailPageContainer>
   );
 };
 
