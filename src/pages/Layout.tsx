@@ -5,10 +5,7 @@ import { Outlet, useLocation } from "react-router-dom";
 const Layout = () => {
   const location = useLocation();
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0 });
-      console.log("scroll to top");
-    }
+    window.scrollTo({ top: 0 });
   }, [location]);
   return (
     <>
