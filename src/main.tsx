@@ -16,6 +16,7 @@ createRoot(document.getElementById("root")!).render(
       <ColorModeProvider>
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router}/>
+          
           <ReactQueryDevtools />
         </QueryClientProvider>
       </ColorModeProvider>

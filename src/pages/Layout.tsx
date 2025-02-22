@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
@@ -11,6 +12,7 @@ const Layout = () => {
     <>
       <NavBar />
       <Outlet />
+      <SpeedInsights />
     </>
   );
 };
