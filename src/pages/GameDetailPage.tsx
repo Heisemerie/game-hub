@@ -20,7 +20,7 @@ const GameDetailPage = () => {
       <SimpleGrid
         columns={{ base: 1, md: 2 }}
         gap={4}
-        paddingX={{ base: 5, md: 10 }}
+        paddingX={{ base: 5, md: 20 }}
       >
         <GridItem gap={3}>
           <Skeleton height="4em" marginBottom={3} />
@@ -48,7 +48,7 @@ const GameDetailPage = () => {
     <SimpleGrid
       columns={{ base: 1, md: 2 }}
       gap={4}
-      paddingX={{ base: 5, md: 10 }}
+      paddingX={{ base: 5, md: 20 }}
     >
       {!isLoading && (
         <>
