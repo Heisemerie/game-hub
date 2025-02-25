@@ -31,7 +31,7 @@ const GameDetailPage = () => {
         <GridItem>
           <SimpleGrid columns={{ sm: 1, md: 2 }} gap={3}>
             {gameScreenshotsSkeleton.map((skeleton) => (
-              <Skeleton height="10em" key={skeleton} />
+              <Skeleton height={40} key={skeleton} />
             ))}
           </SimpleGrid>
         </GridItem>
