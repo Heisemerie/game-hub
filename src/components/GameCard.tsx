@@ -14,7 +14,9 @@ const GameCard = ({
 }: Props) => {
   return (
     <Card.Root h={"full"}>
-      <Image src={getCroppedImageUrl(background_image, 600, 400)} />
+      <Link to={`/games/${slug}`}>
+        <Image src={getCroppedImageUrl(background_image, 600, 400)} />
+      </Link>
       <Card.Body>
         <HStack justify={"space-between"} marginBottom={3}>
           <PlatformIconList
