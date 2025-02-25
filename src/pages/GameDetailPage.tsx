@@ -52,7 +52,7 @@ const GameDetailPage = () => {
             <ExpandableText maxChars={500}>
               {game.description_raw}
             </ExpandableText>
-            <GameAttributes game={game!} />
+            <GameAttributes game={game} />
           </GridItem>
           <GridItem>
             <GameTrailer gameId={game.id} />
