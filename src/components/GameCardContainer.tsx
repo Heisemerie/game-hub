@@ -3,14 +3,15 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  hover: boolean;
 }
 
-const GameCardContainer = ({ children }: Props) => {
+const GameCardContainer = ({ children, hover }: Props) => {
   return (
     <Box
       borderRadius={10}
       overflow={"hidden"}
-      _hover={{ scale: "1.05" }}
+      _hover={hover ? { scale: "1.05" } : undefined}
       transition={"scale 0.3s ease-in-out"}
     >
       {children}

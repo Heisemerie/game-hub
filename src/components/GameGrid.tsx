@@ -40,7 +40,7 @@ const GameGrid = () => {
       >
         {isLoading &&
           skeletons.map((skeleton) => (
-            <GameCardContainer key={skeleton}>
+            <GameCardContainer hover={false} key={skeleton}>
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
@@ -48,7 +48,7 @@ const GameGrid = () => {
           data.pages.map((page, index) => (
             <Fragment key={index}>
               {page.results.map((game) => (
-                <GameCardContainer key={game.id}>
+                <GameCardContainer hover={true} key={game.id}>
                   <GameCard game={game} />
                 </GameCardContainer>
               ))}
