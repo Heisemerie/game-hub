@@ -13,7 +13,7 @@ const GameCard = ({
   game: { name, background_image, parent_platforms, metacritic, slug },
 }: Props) => {
   return (
-    <Card.Root h={"full"}>
+    <Card.Root h={"full"} border={'none'}>
       <Link to={`/games/${slug}`}>
         <Image src={getCroppedImageUrl(background_image, 600, 400)} />
       </Link>
