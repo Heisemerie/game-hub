@@ -15,8 +15,7 @@ createRoot(document.getElementById("root")!).render(
     <ChakraProvider value={system}>
       <ColorModeProvider>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router}/>
-          
+          <RouterProvider router={router} />
           <ReactQueryDevtools />
         </QueryClientProvider>
       </ColorModeProvider>
