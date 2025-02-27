@@ -12,4 +12,6 @@ export default interface Game {
   description_raw: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  website: string;
+  released: string;
 }

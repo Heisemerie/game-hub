@@ -5,7 +5,15 @@ import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import { Skeleton, SkeletonText } from "@/components/ui/skeleton";
 import useGame from "@/hooks/useGame";
-import { GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+  GridItem,
+  Heading,
+  HStack,
+  Link,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
+import { LuExternalLink } from "react-icons/lu";
 import { useParams } from "react-router-dom";
 
 const GameDetailPage = () => {
@@ -52,6 +60,13 @@ const GameDetailPage = () => {
             <ExpandableText maxChars={500}>
               {game.description_raw}
             </ExpandableText>
+            <HStack>
+              <Text>Release Date: {game.released}</Text>
+              <Link href={game.website} target="blank" colorPalette="teal">
+                Website
+                <LuExternalLink />
+              </Link>
+            </HStack>
             <GameAttributes game={game} />
           </GridItem>
           <GridItem>
