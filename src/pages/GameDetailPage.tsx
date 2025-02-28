@@ -60,13 +60,11 @@ const GameDetailPage = () => {
             <ExpandableText maxChars={500}>
               {game.description_raw}
             </ExpandableText>
-            <HStack>
-              <Text>Release Date: {game.released}</Text>
-              <Link href={game.website} target="blank" colorPalette="teal">
-                Website
-                <LuExternalLink />
-              </Link>
-            </HStack>
+            <Link href={game.website} target="blank" colorPalette="teal">
+              {game.name} Website
+              <LuExternalLink />
+            </Link>
+            <Text>Release Date: {game.released}</Text>
             <GameAttributes game={game} />
           </GridItem>
           <GridItem>
