@@ -8,7 +8,6 @@ import useGame from "@/hooks/useGame";
 import {
   GridItem,
   Heading,
-  HStack,
   Link,
   SimpleGrid,
   Text,
