@@ -1,17 +1,11 @@
 import ExpandableText from "@/components/ExpandableText";
 import GameAttributes from "@/components/GameAttributes";
 import GameDetailPageContainer from "@/components/GameDetailPageContainer";
+import GameDetailPageSkeleton from "@/components/GameDetailPageSkeleton";
 import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
-import { Skeleton, SkeletonText } from "@/components/ui/skeleton";
 import useGame from "@/hooks/useGame";
-import {
-  GridItem,
-  Heading,
-  Link,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { GridItem, Heading, Link, Text } from "@chakra-ui/react";
 import { LuExternalLink } from "react-icons/lu";
 import { useParams } from "react-router-dom";
 
@@ -19,29 +13,10 @@ const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, isLoading, error } = useGame(slug!);
 
-  const gameAttributesSkeleton = [1, 2, 3, 4];
-
-  const gameScreenshotsSkeleton = [1, 2, 3, 4, 5, 6];
-
   if (isLoading) {
     return (
       <GameDetailPageContainer>
-        <GridItem gap={3}>
-          <Skeleton height={10} marginBottom={3} />
-          <Skeleton height={40} />
-          <SimpleGrid columns={2} gap={10} marginY={5}>
-            {gameAttributesSkeleton.map((skeleton) => (
-              <SkeletonText noOfLines={3} key={skeleton} />
-            ))}
-          </SimpleGrid>
-        </GridItem>
-        <GridItem>
-          <SimpleGrid columns={{ sm: 1, md: 2 }} gap={3}>
-            {gameScreenshotsSkeleton.map((skeleton) => (
-              <Skeleton height={40} key={skeleton} />
-            ))}
-          </SimpleGrid>
-        </GridItem>
+        <GameDetailPageSkeleton />
       </GameDetailPageContainer>
     );
   }
