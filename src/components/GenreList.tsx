@@ -1,6 +1,6 @@
 import useGameQueryStore from "@/gameQueryStore";
 import useGenres from "@/hooks/useGenres";
-import getCroppedImageUrl from "@/services/imageUrl";
+import getCroppedImageUrl from "@/services/image-url";
 import { Button, Image, List, Spinner } from "@chakra-ui/react";
 
 interface Props {
