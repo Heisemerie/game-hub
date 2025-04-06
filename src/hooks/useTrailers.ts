@@ -1,5 +1,5 @@
 import Trailer from "@/entities/Trailer";
-import { APIclient } from "@/services/apiClient";
+import { APIclient } from "@/services/api-client";
 import { useQuery } from "@tanstack/react-query";
 
 const useTrailers = (gameId: number) => {

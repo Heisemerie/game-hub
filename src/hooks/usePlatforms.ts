@@ -1,5 +1,5 @@
 import platforms from "@/data/platforms";
-import { APIclient, FetchResponse } from "@/services/apiClient";
+import { APIclient, FetchResponse } from "@/services/api-client";
 import Platform from "@/entities/Platform";
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
