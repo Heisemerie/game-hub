@@ -1,5 +1,5 @@
 import { GridItem, SimpleGrid, Skeleton } from "@chakra-ui/react";
-import { SkeletonText } from "./ui/skeleton";
+import { SkeletonText } from "../ui/skeleton";
 
 const GameDetailPageSkeleton = () => {
   const gameAttributesSkeleton = [1, 2, 3, 4];

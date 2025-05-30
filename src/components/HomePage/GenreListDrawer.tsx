@@ -8,7 +8,7 @@ import {
   DrawerRoot,
   DrawerTitle,
   DrawerTrigger,
-} from "../components/ui/drawer";
+} from "../ui/drawer";
 import GenreList from "./GenreList";
 
 const GenreListDrawer = () => {

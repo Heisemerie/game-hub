@@ -1,7 +1,7 @@
 import usePlatforms from "@/hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
-import { Button } from "./ui/button";
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
+import { Button } from "../ui/button";
+import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "../ui/menu";
 import usePlatform from "@/hooks/usePlatform";
 import useGameQueryStore from "@/gameQueryStore";
 import renderIcon from "@/components/PlatformIcon";
