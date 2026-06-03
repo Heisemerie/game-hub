@@ -1,8 +1,8 @@
 import Game from "@/entities/Game";
-import { APIclient } from "@/services/api-client";
+import { ApiClient } from "@/services/apiClient";
 import { useQuery } from "@tanstack/react-query";
 
-const gameService = new APIclient<Game>("/games");
+const gameService = new ApiClient<Game>("/games");
 
 const useGame = (slug: string) =>
   useQuery({

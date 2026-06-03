@@ -15,7 +15,7 @@ const axiosInstance = axios.create({
   },
 });
 
-export class APIclient<T> {
+export class ApiClient<T> {
   endpoint: string;
 
   constructor(endpoint: string) {

@@ -6,6 +6,7 @@ interface GameQuery {
   sortOrder?: string;
   searchText?: string;
 }
+
 interface GameQueryStore {
   gameQuery: GameQuery;
   setGenreId: (genreId: number) => void;
