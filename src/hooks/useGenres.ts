@@ -1,5 +1,5 @@
 import genres from "@/data/genres";
-import { ApiClient, FetchResponse } from "@/services/apiClient";
+import { ApiClient, FetchResponse } from "@/lib/apiClient";
 import Genre from "@/entities/Genre";
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";

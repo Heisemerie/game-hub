@@ -1,6 +1,6 @@
 import useGameQueryStore from "@/gameQueryStore";
 import useGenres from "@/hooks/useGenres";
-import getCroppedImageUrl from "@/services/imageUrl";
+import getCroppedImageUrl from "@/utilities/imageUrl";
 import { Button, Image, List, Spinner } from "@chakra-ui/react";
 
 interface Props {
@@ -9,7 +9,11 @@ interface Props {
   whitespace?: string;
 }
 
-const GenreList = ({alignItems='center', margin='auto', whitespace='normal'}: Props) => {
+const GenreList = ({
+  alignItems = "center",
+  margin = "auto",
+  whitespace = "normal",
+}: Props) => {
   const genreId = useGameQueryStore((store) => store.gameQuery.genreId);
   const setGenreId = useGameQueryStore((store) => store.setGenreId);
   const { data, isLoading, error } = useGenres();
